@@ -12,3 +12,11 @@ if (window.SimpleSlide) {
 if (SimpleAnime) {
     new SimpleAnime();
 }
+if (window.SimpleForm) {
+    new SimpleForm({
+        form: '.formphp',
+        button: '#enviar',
+        erro: `<div id='form-erro'><p>Um erro ocorreu, tente novamente</p></div>`,
+        sucesso: `<div id='form-sucesso'><p>Formulário enviado com sucesso</p></div>`,
+    })
+}
