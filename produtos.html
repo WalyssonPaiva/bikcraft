@@ -3,14 +3,24 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/grid.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/produtos.css">
     <link rel="stylesheet" href="css/responsivo.css">
-    <title>Bikcraft - Produtos</title>
+    <title>Bikcraft - Bicicletas Personalizadas</title>
+    <meta name="description" content="Compre a sua bicicleta personalizada na Bikcraft. Possuímos modelos Passeio, Retrô e Esporte.">
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Bikcraft - Bicicletas Personalizadas" />
+    <meta property="og:description" content="Compre a sua bicicleta personalizada na Bikcraft. Possuímos modelos Passeio, Retrô e Esporte." />
+    <meta property="og:url" content="http://bikcraft.com" />
+    <meta property="og:image" content="http://bikcraft.com/img/og-image.png" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="shortcut icon" href="favicon.ico">
 </head>
 
 <body>
@@ -107,16 +117,22 @@
     <section class="orcamento">
         <div class="container">
             <h2 class="subtitulo">Orçamento</h2>
-            <form class="grid-8 form" action="" id="form_orcamento">
+            <form class="grid-8 form formphp" method="POST" action="./enviar.php" id="form_orcamento">
                 <label for="nome">Nome</label>
-                <input type="text" id="nome">
+                <input name="nome" required type="text" id="nome">
                 <label for="email">E-mail</label>
-                <input type="text" id="email">
+                <input name="email" required type="email" id="email">
                 <label for="telefone">Telefone</label>
-                <input type="text" id="telefone">
-                <label for="mensagem">Especificações</label>
-                <textarea id="spec"></textarea>
-                <button class="btn" type="submit">Enviar</button>
+                <input name="telefone" type="text" id="telefone">
+
+                <label class="nao-aparece">Se você não é um robô, deixe em branco</label>
+                <input type="text" class="nao-aparece" name="leaveblank">
+                <label class="nao-aparece">Se você não é um robô, não mude esse campo</label>
+                <input type="text" class="nao-aparece" name="dontchange" value="http://">
+
+                <label for="mensagem">Mensagem</label>
+                <textarea id="mensagem" name="mensagem" required></textarea>
+                <button id="enviar" name="enviar" class="btn" type="submit">Enviar</button>
             </form>
             <div class="grid-8 orcamento_dados">
                 <h3>dados</h3>
@@ -181,7 +197,9 @@
         </div>
     </footer>
     <script src="./js/simple-anime.js"></script>
+    <script src="./js/simple-form.js"></script>
     <script src="./js/script.js"></script>
+
 </body>
 
 </html>
